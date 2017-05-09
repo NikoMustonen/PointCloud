@@ -7,12 +7,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Class handling Http requests.
+ *
+ * @author Niko Mustonen mustonen.niko@gmail.com
+ * @version %I%, %G%
+ * @since 1.7
+ */
 @RestController(value = "/highscores")
 public class HighScoreController {
 
     @Autowired
     HighScoreRepository hr;
     
+    /**
+     * Fetches 10 best players from the database in order.
+     * 
+     * @return Highscores in json array.
+     */
     @RequestMapping(
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -21,6 +33,12 @@ public class HighScoreController {
         return hr.findTop100ByOrderByPointsDesc();
     }
     
+    /**
+     * Adds new high score to database.
+     * 
+     * @param hs Highscore in json format.
+     * @return Created highscore.
+     */
     @RequestMapping(
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE)

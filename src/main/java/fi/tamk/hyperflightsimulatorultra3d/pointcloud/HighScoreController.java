@@ -18,7 +18,7 @@ public class HighScoreController {
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<HighScore> getHighScore() {
         
-        return hr.findAll();
+        return hr.findTop100ByOrderByPointsDesc();
     }
     
     @RequestMapping(

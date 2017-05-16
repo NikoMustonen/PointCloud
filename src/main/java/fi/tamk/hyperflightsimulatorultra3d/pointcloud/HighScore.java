@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 public class HighScore {
-    
+
     /**
      * Stores high score id.
      */
@@ -19,26 +19,26 @@ public class HighScore {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, updatable = false, insertable = false)
     private Long id;
-    
+
     /**
-     * Stores high score owners name.
+     * Stores highscore owners name.
      */
     @Column(name = "name")
     private String name;
-    
+
     /**
      * Stores points.
      */
     private Integer points;
-    
+
     /**
      * Generates default high score element.
      */
     public HighScore(){}
-    
+
     /**
      * Generates high score with given id.
-     * 
+     *
      * @param id Id.
      */
     public HighScore(Long id){
@@ -47,7 +47,7 @@ public class HighScore {
 
     /**
      * Returns id.
-     * 
+     *
      * @return Id.
      */
     public Long getId() {
@@ -56,8 +56,8 @@ public class HighScore {
 
     /**
      * Sets id.
-     * 
-     * @param id Id. 
+     *
+     * @param id Id.
      */
     public void setId(Long id) {
         this.id = id;
@@ -65,7 +65,7 @@ public class HighScore {
 
     /**
      * Returns name.
-     * 
+     *
      * @return Name.
      */
     public String getName() {
@@ -74,7 +74,7 @@ public class HighScore {
 
     /**
      * Sets name.
-     * 
+     *
      * @param name Name.
      */
     public void setName(String name) {
@@ -83,7 +83,7 @@ public class HighScore {
 
     /**
      * Returns points.
-     * 
+     *
      * @return Points.
      */
     public Integer getPoints() {
@@ -92,8 +92,8 @@ public class HighScore {
 
     /**
      * Sets points
-     * 
-     * @param points New points. 
+     *
+     * @param points New points.
      */
     public void setPoints(Integer points) {
         this.points = points;
